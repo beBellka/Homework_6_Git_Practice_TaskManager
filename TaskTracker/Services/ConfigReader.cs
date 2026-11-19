@@ -16,14 +16,14 @@ namespace TaskTracker.Services
         {
             if (!File.Exists(configPath))
             {
-                Console.WriteLine("Файл конфигурации не найден. Используется режим Development.");
-                return "Development";
+                Console.WriteLine("Файл конфигурации не найден. Используется режим Production.");
+                return "Production";
             }
 
             string[] lines = File.ReadAllLines(configPath);
             if (lines.Length == 0)
             {
-                return "Development";
+                return "Production";
             }
 
             return lines[0].Trim();
